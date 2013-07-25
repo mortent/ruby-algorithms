@@ -2,6 +2,14 @@ module Algorithms
 
   module Sort
 
+
+    # Algorithm: Insertion sort
+    # Requirements:
+    # Time complexity:
+    # Space complexity:
+    # Stable:
+    #
+    # Algorithms::Sort.insertion_sort([..]) => [..]
     def self.insertion_sort(array)
       array.each_with_index do |element, count|
         next if count == 0
@@ -15,19 +23,25 @@ module Algorithms
     end
 
 
-
+    # Algorithm: Merge sort
+    # Requirements:
+    # Time complexity:
+    # Space complexity:
+    # Stable:
+    #
+    # Algorithms::Sort.merge_sort([..]) => [..]
     def self.merge_sort(array, first, last)
       if first < last
         middle = ((first + last)/ 2).floor
         merge_sort(array, first, middle)
-        merge_sort(array,middle + 1, last)
+        merge_sort(array, middle + 1, last)
         merge(array, first, middle, last)
       end
-
+      array
     end
 
     def self.merge(array, first, middle, last)
-      first_array =  array[first..middle] << Float:: INFINITY
+      first_array =  array[first..middle] << Float::INFINITY
       second_array =  array[middle + 1..last] << Float::INFINITY
       first_counter = 0
       second_counter = 0
@@ -40,7 +54,6 @@ module Algorithms
           second_counter += 1
         end
       end
-      array
     end
 
   end
