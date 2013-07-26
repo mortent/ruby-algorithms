@@ -4,9 +4,8 @@ module Algorithms
 
     # Algorithm: Kadane's algorithm for finding maximum subarray
     # Requirements:
-    # Time complexity:
-    # Space complexity:
-    # Stable:
+    # Time complexity: O(n)
+    # Space complexity: O(1)
     #
     # Algorithms::MaximumSubarray.kadanes_algorithm(..) => (..)
     def self.kadanes_algorithm(array)
@@ -36,9 +35,8 @@ module Algorithms
 
     # Algorithm: Maximum subarray with divide and conquer
     # Requirements:
-    # Time complexity:
-    # Space complexity:
-    # Stable:
+    # Time complexity: O(n ln n)
+    # Space complexity: O(1)
     #
     # Algorithms::MaximumSubarray.divide_and_conquer(..) => (..)
     def self.divide_and_conquer(array, low, high)
