@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../../../lib/data_structure/heap/heap'
+require_relative '../../lib/data_structure/heap'
 include DataStructure
 
 class TestHeap < Test::Unit::TestCase

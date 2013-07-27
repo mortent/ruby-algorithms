@@ -1,4 +1,4 @@
-require_relative '../../../lib/data_structure/heap/heap'
+require_relative '../../../lib/data_structure/heap'
 include DataStructure
 
 module Algorithms
