@@ -1,6 +1,29 @@
+require_relative '../../../lib/data_structure/heap/heap'
+include DataStructure
+
 module Algorithms
 
   module Sort
+
+
+    # Algorithm: Heap sort
+    # Requirements:
+    # Time complexity: O(n ln n)
+    # Space complexity: O(1)
+    # Stable:
+    #
+    # Algorithms::Sort.heap_sort([..]) => [..]
+    def self.heap_sort(array)
+      Heap.build_max_heap(array)
+      heap_size = array.length
+      (heap_size - 1).downto(1) do |i|
+        temp = array[0]
+        array[0] = array[i]
+        array[i] = temp
+        heap_size -= 1
+        Heap.max_heapify(array, heap_size, 0)
+      end
+    end
 
 
     # Algorithm: Insertion sort
