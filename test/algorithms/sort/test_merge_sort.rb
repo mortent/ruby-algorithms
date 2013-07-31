@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../../../lib/algorithms/sort/sort'
+require_relative '../../../lib/algorithms'
 include Algorithms
 
 class TestMergeSort < Test::Unit::TestCase

@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../../../lib/algorithms/maximum_subarray/maximum_subarray'
+require_relative '../../../lib/algorithms'
 include Algorithms
 
 class TestMaximumSubarray < Test::Unit::TestCase
