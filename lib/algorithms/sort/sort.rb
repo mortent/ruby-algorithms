@@ -1,5 +1,28 @@
 module Algorithms::Sort
 
+
+  # Algorithm: Randomized quicksort
+  # Requirements:
+  # Time complexity: O(n ln n)
+  # Space complexity: O(1)
+  # Stable:
+  #
+  # Algorithms::Sort.randomized_quicksort([..]) => [..]
+  def self.randomized_quicksort(array, low, high)
+    if low < high
+      split = randomized_partition(array, low, high)
+      randomized_quicksort(array, low, split - 1)
+      randomized_quicksort(array, split + 1, high)
+    end
+  end
+
+  def self.randomized_partition(array, low, high)
+    p = rand(low..high)
+    swap(array, p, high)
+    partition(array, low, high)
+  end
+
+
   # Algorithm: Quicksort
   # Requirements:
   # Time complexity: O(n ln n)
