@@ -7,4 +7,4 @@
 
 module DataStructure; end
 
-require_relative 'datastructure/heap'
+require_relative 'datastructure/binary_heap'

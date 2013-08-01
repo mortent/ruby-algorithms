@@ -1,4 +1,4 @@
-class DataStructure::Heap
+class DataStructure::BinaryHeap
 
   def initialize(array = [])
     @elements = []
@@ -90,14 +90,14 @@ class DataStructure::Heap
 end
 
 
-class DataStructure::MaxHeap < DataStructure::Heap
+class DataStructure::MaxHeap < DataStructure::BinaryHeap
   def is_first_element_top_most_element(element1, element2)
     element1 > element2
   end
 end
 
 
-class DataStructure::MinHeap < DataStructure::Heap
+class DataStructure::MinHeap < DataStructure::BinaryHeap
   def is_first_element_top_most_element(element1, element2)
     element1 < element2
   end
