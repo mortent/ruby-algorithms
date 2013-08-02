@@ -29,15 +29,15 @@ class TestMergeSort < Test::Unit::TestCase
   end
 
   def test_merge_sort_correct_with_two_element
-    assert_equal([1,2], Sort.merge_sort([2, 1], 0, 1))
+    assert_equal([1,2], Sort.merge_sort!([2, 1], 0, 1))
   end
 
   def test_merge_sort_correct_with_even_number_of_elements
-    assert_equal([1, 2, 3, 4], Sort.merge_sort([3, 2, 4, 1], 0, 3))
+    assert_equal([1, 2, 3, 4], Sort.merge_sort!([3, 2, 4, 1], 0, 3))
   end
 
   def test_merge_sort_correct_with_odd_number_of_elements
-    assert_equal([1, 2, 3, 4, 5], Sort.merge_sort([5, 4, 1, 3, 2], 0, 4))
+    assert_equal([1, 2, 3, 4, 5], Sort.merge_sort!([5, 4, 1, 3, 2], 0, 4))
   end
 
 end

@@ -27,18 +27,18 @@ module Algorithms::Sort
   # Stable:
   #
   # Algorithms::Sort.randomized_quicksort([..]) => [..]
-  def self.randomized_quicksort(array, low, high)
+  def self.randomized_quicksort!(array, low, high)
     if low < high
-      split = randomized_partition(array, low, high)
-      randomized_quicksort(array, low, split - 1)
-      randomized_quicksort(array, split + 1, high)
+      split = randomized_partition!(array, low, high)
+      randomized_quicksort!(array, low, split - 1)
+      randomized_quicksort!(array, split + 1, high)
     end
   end
 
-  def self.randomized_partition(array, low, high)
+  def self.randomized_partition!(array, low, high)
     p = rand(low..high)
-    swap(array, p, high)
-    partition(array, low, high)
+    swap!(array, p, high)
+    partition!(array, low, high)
   end
 
 
@@ -49,29 +49,29 @@ module Algorithms::Sort
   # Stable:
   #
   # Algorithms::Sort.quicksort([..]) => [..]
-  def self.quicksort(array, low, high)
+  def self.quicksort!(array, low, high)
     if low < high
-      split = partition(array, low, high)
-      quicksort(array, low, split - 1)
-      quicksort(array, split + 1, high)
+      split = partition!(array, low, high)
+      quicksort!(array, low, split - 1)
+      quicksort!(array, split + 1, high)
     end
   end
 
-  def self.partition(array, low, high)
+  def self.partition!(array, low, high)
     x = array[high]
     i = low - 1
     (low..high - 1).each do |j|
       if array[j] <= x
         i = i + 1
-        swap(array, i, j)
+        swap!(array, i, j)
       end
     end
-    swap(array, i + 1, high)
+    swap!(array, i + 1, high)
     i + 1
   end
 
 
-  def self.swap(array, index1, index2)
+  def self.swap!(array, index1, index2)
     temp = array[index1]
     array[index1] = array[index2]
     array[index2] = temp
@@ -85,7 +85,7 @@ module Algorithms::Sort
   # Stable:
   #
   # Algorithms::Sort.heap_sort([..]) => [..]
-  def self.heap_sort(array)
+  def self.heap_sort!(array)
     build_max_heap(array)
     heap_size = array.length
     (heap_size - 1).downto(1) do |i|
@@ -153,7 +153,7 @@ module Algorithms::Sort
   # Stable:
   #
   # Algorithms::Sort.insertion_sort([..]) => [..]
-  def self.insertion_sort(array)
+  def self.insertion_sort!(array)
     array.each_with_index do |element, count|
       next if count == 0
       i = count - 1
@@ -173,11 +173,11 @@ module Algorithms::Sort
   # Stable:
   #
   # Algorithms::Sort.merge_sort([..]) => [..]
-  def self.merge_sort(array, first, last)
+  def self.merge_sort!(array, first, last)
     if first < last
       middle = ((first + last)/ 2).floor
-      merge_sort(array, first, middle)
-      merge_sort(array, middle + 1, last)
+      merge_sort!(array, first, middle)
+      merge_sort!(array, middle + 1, last)
       merge(array, first, middle, last)
     end
     array
